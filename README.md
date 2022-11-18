@@ -119,3 +119,18 @@ m001,/ruta/absoluta/m001_2022_S22_L001_R2_001.fastq.gz,reverse
 
 > Recordemos 2 cosas: En como terminan los nombres de las muestras (_L001_R1_001) y que la extensión comprimida (fastq.gz) de archivos provenientes de la tecnología Illumina
 
+## Estadística de los archivos fastq
+
+Primero obtendremos una estadística previa de los archivos a trabajar.
+
+```
+seqkit stats *.fastq.gz
+```
+
+## Importamos los archvos con QIIME2
+
+```
+qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.txt --output-path demuxed_seqs.qza --input-format PairedEndFastqManifestPhred33
+```
+
+> Esto demorará unos minutos
