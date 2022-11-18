@@ -144,3 +144,17 @@ qiime demux summarize --i-data demuxed_seqs.qza --o-visualization visualization/
 ```
 
 > Esto demorará unos minutos
+
+## Remover adaptadores
+
+```
+qiime cutadapt trim-paired --i-demultiplexed-sequences demuxed_seqs.qza --p-cores 8 --p-front-f GGGWACWGGWTGAACWGTWTAYC --p-front-r TAAACTTCAGGGTGACCAAARAA --o-trimmed-sequences demuxed_seqs_trimmed.qza
+```
+> Esto demorará unos minutos
+
+Luego, procedemos a visualizar estos resultados y compararlos con los primeros
+
+```
+qiime demux summarize --i-data demuxed_seqs_trimmed.qza --o-visualization visualization/seqs_quality_trimmed.qzv
+```
+
