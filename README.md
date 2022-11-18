@@ -158,7 +158,7 @@ Luego, procedemos a visualizar estos resultados y compararlos con los primeros
 qiime demux summarize --i-data demuxed_seqs_trimmed.qza --o-visualization visualization/seqs_quality_trimmed.qzv
 ```
 
-# Recorte de lecturas basado en la calidad de las bases 
+## Recorte de lecturas basado en la calidad de las bases 
 
 ```
 qiime dada2 denoise-paired --i-demultiplexed-seqs demuxed_seqs.qza --p-trunc-len-f 200 --p-trunc-len-r 200 --o-table table.qza --o-representative-sequences representatives.qza --o-denoising-stats denoising_stats.qza --p-n-threads 20
