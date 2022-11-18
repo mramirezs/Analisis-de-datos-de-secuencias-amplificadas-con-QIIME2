@@ -105,4 +105,17 @@ Commands:
   vsearch             Plugin for clustering and dereplicating with vsearch
 ```
 
+## Creando el archivo Manifest.txt 
+
+Para poder trabajar con todos los archivos QIIMe requiere de una archivo de texto, dentro de este archivo se inserta los nombres de las muestra, la ruta absoluta en donde está ubicada la muestra y el sentido o dirección de las lecturas. Todos estos datos separados por comas. 
+
+Ejemplo:
+
+```
+sample-id,absolute-filepath,direction
+m001,/ruta/absoluta/m001_2022_S22_L001_R1_001.fastq.gz,forward
+m001,/ruta/absoluta/m001_2022_S22_L001_R2_001.fastq.gz,reverse
+```
+
+> Recordemos 2 cosas: En como terminan los nombres de las muestras (_L001_R1_001) y que la extensión comprimida (fastq.gz) de archivos provenientes de la tecnología Illumina
 
