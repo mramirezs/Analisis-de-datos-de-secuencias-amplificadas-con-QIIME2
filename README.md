@@ -137,7 +137,7 @@ qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-pa
 
 ## Visualización de los datos importados
 
-Primero creamos la carpeta visualization con el comandos `mkdir`.
+Primero creamos la carpeta visualization con el comando `mkdir`.
 
 ```
 qiime demux summarize --i-data demuxed_seqs.qza --o-visualization visualization/seqs_quality.qzv
