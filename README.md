@@ -27,3 +27,10 @@ rm qiime2-2022.8-py38-linux-conda.yml
 ```
 conda activate qiime2-2022.8
 ```
+> Para desactivar el entorno, usamos la linea de comandos `conda deactivate`
+
+* Prueba de instalación 
+
+```
+qiime --help
+```
