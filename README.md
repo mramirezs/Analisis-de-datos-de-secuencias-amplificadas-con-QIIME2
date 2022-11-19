@@ -164,3 +164,16 @@ qiime demux summarize --i-data demuxed_seqs_trimmed.qza --o-visualization visual
 qiime dada2 denoise-paired --i-demultiplexed-seqs demuxed_seqs.qza --p-trunc-len-f 200 --p-trunc-len-r 200 --o-table table.qza --o-representative-sequences representatives.qza --o-denoising-stats denoising_stats.qza --p-n-threads 20
 ```
 
+## Visualización de los recortes
+
+```
+qiime feature-table summarize --i-table table.qza --o-visualization visualization/table_denoised.qzv
+```
+
+```
+qiime metadata tabulate --m-input-file denoising_stats.qza --o-visualization visualization/denoising_stats.qzv
+```
+
+```
+qiime feature-table tabulate-seqs --i-data representatives.qza --o-visualization  visualization/representatives.qzv
+```
