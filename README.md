@@ -130,7 +130,7 @@ seqkit stats *.fastq.gz
 ## Importamos los archvos con QIIME2
 
 ```
-qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.txt --output-path demuxed_seqs.qza --input-format PairedEndFastqManifestPhred33
+qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-path manifest.txt --output-path reads.qza --input-format PairedEndFastqManifestPhred33
 ```
 
 > Esto demorará unos minutos
@@ -140,7 +140,7 @@ qiime tools import --type 'SampleData[PairedEndSequencesWithQuality]' --input-pa
 Primero creamos la carpeta visualization con el comando `mkdir`.
 
 ```
-qiime demux summarize --i-data demuxed_seqs.qza --o-visualization visualization/seqs_quality.qzv
+qiime demux summarize --i-data reads.qza --o-visualization visualization/reads_quality.qzv
 ```
 
 > Esto demorará unos minutos
@@ -148,14 +148,14 @@ qiime demux summarize --i-data demuxed_seqs.qza --o-visualization visualization/
 ## Remover adaptadores
 
 ```
-qiime cutadapt trim-paired --i-demultiplexed-sequences demuxed_seqs.qza --p-cores 8 --p-front-f GGGWACWGGWTGAACWGTWTAYC --p-front-r TAAACTTCAGGGTGACCAAARAA --o-trimmed-sequences demuxed_seqs_trimmed.qza
+qiime cutadapt trim-paired --i-demultiplexed-sequences reads.qza --p-cores 8 --p-front-f GGGWACWGGWTGAACWGTWTAYC --p-front-r TAAACTTCAGGGTGACCAAARAA --o-trimmed-sequences reads_trimmed.qza
 ```
 > Esto demorará unos minutos
 
 Luego, procedemos a visualizar estos resultados y compararlos con los primeros
 
 ```
-qiime demux summarize --i-data demuxed_seqs_trimmed.qza --o-visualization visualization/seqs_quality_trimmed.qzv
+qiime demux summarize --i-data reads_trimmed.qza --o-visualization visualization/reads_trimmed_quality.qzv
 ```
 
 ## Recorte de lecturas basado en la calidad de las bases 
