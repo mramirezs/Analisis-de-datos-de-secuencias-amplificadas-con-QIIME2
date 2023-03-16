@@ -1,4 +1,4 @@
-# Uso-de-QIIME2-para-analisis-de-16S
+# Análisis de datos de secuencias amplificadas con QIIME2
 
 ## Instalación de Miniconda
 
