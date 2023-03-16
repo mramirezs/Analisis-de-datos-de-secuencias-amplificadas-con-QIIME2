@@ -1,5 +1,7 @@
 # Análisis de datos de secuencias amplificadas con QIIME2
 
+En primer lugar, haremos la instalación de los programas y sus requisitos para el análisis.
+
 ## Instalación de Miniconda
 
 En nuestro caso, nuestra computadora trabaja con Python 3.8.13, por tanto, descargamos la versión de Miniconda Miniconda3 Linux 64-bit.
